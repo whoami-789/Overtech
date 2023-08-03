@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Leistungen" transform="translate(-632.000000, -681.000000)">
+            <g id="Group-7" transform="translate(633.000000, 682.000000)">
+                <g id="Group-10">
+                    <g id="right-arrow" transform="translate(9.500000, 14.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path d="M16.8347094,0.255667961 C16.4941251,-0.0852226538 15.9272785,-0.0852226538 15.5747856,0.255667961 C15.2342013,0.585042002 15.2342013,1.13323096 15.5747856,1.46183723 L21.9633217,7.64009575 L0.88202604,7.64009575 C0.390600191,7.64086352 0,8.01860717 0,8.49385783 C0,8.96910848 0.390600191,9.35913648 0.88202604,9.35913648 L21.9633217,9.35913648 L15.5747856,15.5258784 C15.2342013,15.866769 15.2342013,16.4157258 15.5747856,16.744332 C15.9272785,17.0852227 16.494919,17.0852227 16.8347094,16.744332 L24.7356304,9.10346852 C25.0881232,8.77409448 25.0881232,8.22590552 24.7356304,7.89729925 L16.8347094,0.255667961 Z" id="Shape"></path>
+                    </g>
+                    <circle id="Oval-3" stroke="#FFFFFF" stroke-width="2" cx="22.5" cy="22.5" r="22.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

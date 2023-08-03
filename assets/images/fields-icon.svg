@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>multi-platform</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Landingpage-White" transform="translate(-253.000000, -3553.000000)" stroke="#0B2B35">
+            <g id="multi-platform" transform="translate(253.000000, 3553.000000)">
+                <polyline id="Shape" stroke-linecap="round" points="18.9130435 21.5217391 1.95652174 21.5217391 1.95652174 12.3913043"></polyline>
+                <polyline id="Shape" stroke-linecap="round" points="9.7826087 5.86956522 25.4347826 5.86956522 25.4347826 15"></polyline>
+                <path d="M13.6956522,21.5217391 L13.6956522,26.7391304" id="Shape"></path>
+                <path d="M8.47826087,26.7391304 L18.9130435,26.7391304" id="Shape" stroke-linecap="round"></path>
+                <path d="M1.95652174,17.6086957 L18.9130435,17.6086957" id="Shape" stroke-linecap="round"></path>
+                <rect id="Rectangle-path" x="0.652173913" y="0.652173913" width="6.52173913" height="9.13043478"></rect>
+                <rect id="Rectangle-path" x="21.5217391" y="17.6086957" width="7.82608696" height="11.7391304"></rect>
+                <path d="M3.26086957,7.17391304 L4.56521739,7.17391304" id="Shape" stroke-linecap="round"></path>
+                <path d="M21.5217391,26.7391304 L29.3478261,26.7391304" id="Shape"></path>
+                <path d="M18.2608696,9.13043478 L22.173913,13.0434783" id="Shape" stroke-linecap="round"></path>
+                <path d="M21.5217391,8.47826087 L22.826087,9.7826087" id="Shape" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
