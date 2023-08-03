@@ -85,70 +85,40 @@
                         Client Industries:
                     </h3>
                     <div class="fields-list">
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
+                        <?php
+
+                        // параметры по умолчанию
+                        $posts = get_posts(array(
+                            'numberposts' => -1,
+                            'category' => 0,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'include' => array(),
+                            'exclude' => array(),
+                            'meta_key' => '',
+                            'meta_value' => '',
+                            'post_type' => 'our_fields',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                        ));
+
+                        foreach ($posts as $post) {
+                            setup_postdata($post);
+
+                            ?>
+
+                            <div class="fields-list__item">
+                                <div class="fields-list__item-icon">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                                </div>
+                                <span class="fields-list__item-desc">
+                                    <?php the_title(); ?>
                                 </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
                             </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                    Telecommunication
-                                </span>
-                        </div>
+                        <?php }
+
+                        wp_reset_postdata(); // сброс
+
+                        ?>
                     </div>
                 </div>
                 <div class="fields__picture"></div>

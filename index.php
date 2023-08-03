@@ -11,13 +11,14 @@
                     Negotiations. Conflict. <br> Be prepared.
                 </p>
                 <div class="intro__decorate">
-                    <img class="intro__decorate-icon" src="<?php bloginfo( 'template_url' ); ?>/assets/images/arrow-down-icon.svg" alt="">
+                    <img class="intro__decorate-icon"
+                         src="<?php bloginfo('template_url'); ?>/assets/images/arrow-down-icon.svg" alt="">
                 </div>
             </div>
             <div class="intro__bottom">
                 <a href="page-blog.php" class="intro__bottom-title">
                     <span>Recent Articles & News</span>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/next-icon.svg" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/next-icon.svg" alt="">
                 </a>
                 <div class="intro__bottom-table">
                     <a href="page-blog.php" class="intro__bottom-item">
@@ -63,22 +64,35 @@
             </div>
         </div>
         <div class="vision__content">
-            <h3>Negotiation is a craftsmanship.</h3>
-            <p>
-                With the right mindset, with the state of the art knowledge, and with extensive experience,
-                negotiation excellence can be reached. Our customers are best prepared in the negotiation room.
-                They have a concrete action plan in mind and they are ready to react properly, no matter
-                which difficulty might occur. We have empowered them in forefront and we are the reliable
-                partner sitting next to them.
-            </p>
-            <h3>Negotiation is a craftsmanship.</h3>
-            <p>
-                With the right mindset, with the state of the art knowledge, and with extensive experience,
-                negotiation excellence can be reached. Our customers are best prepared in the negotiation room.
-                They have a concrete action plan in mind and they are ready to react properly, no matter
-                which difficulty might occur. We have empowered them in forefront and we are the reliable
-                partner sitting next to them.
-            </p>
+            <?php
+
+            // параметры по умолчанию
+            $posts = get_posts(array(
+                'numberposts' => -1,
+                'category' => 0,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'include' => array(),
+                'exclude' => array(),
+                'meta_key' => '',
+                'meta_value' => '',
+                'post_type' => 'mission_vision',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            ));
+
+            foreach ($posts as $post) {
+                setup_postdata($post);
+
+                ?>
+
+                <h3><?php the_title(); ?></h3>
+                <p><?php the_content(); ?></p>
+
+            <?php }
+
+            wp_reset_postdata(); // сброс
+
+            ?>
         </div>
     </div>
 </section>
@@ -99,54 +113,52 @@
             </div>
         </div>
         <div class="services__table">
-            <div class="services__table-item service-item">
-                <div class="service-item__content">
-                    <h3 class="service-item__title">
-                        Negotiation Consulting
-                    </h3>
-                    <div class="service-item__text">
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
-                        <br>
-                        <br>
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
+            <?php
+
+            // параметры по умолчанию
+            $posts = get_posts(array(
+                'numberposts' => -1,
+                'category' => 0,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'include' => array(),
+                'exclude' => array(),
+                'meta_key' => '',
+                'meta_value' => '',
+                'post_type' => 'our_services',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            ));
+
+            foreach ($posts as $post) {
+                setup_postdata($post);
+
+                ?>
+
+                <div class="services__table-item service-item">
+                    <div class="service-item__content">
+                        <h3 class="service-item__title">
+                            <?php the_title(); ?>
+                        </h3>
+                        <div class="service-item__text">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
+                    <img class="service-item__picture" src="<?php echo get_the_post_thumbnail_url(); ?>">
                 </div>
-                <div class="service-item__picture"></div>
-            </div>
-            <div class="services__table-item service-item">
-                <div class="service-item__content">
-                    <h3 class="service-item__title">
-                        Negotiation Consulting
-                    </h3>
-                    <div class="service-item__text">
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
-                        <br>
-                        <br>
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
-                    </div>
-                </div>
-                <div class="service-item__picture"></div>
-            </div>
-            <div class="services__table-item service-item">
-                <div class="service-item__content">
-                    <h3 class="service-item__title">
-                        Negotiation Consulting
-                    </h3>
-                    <div class="service-item__text">
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
-                        <br>
-                        <br>
-                        Successful negotiating requires a strong level of assertiveness, but also empathy.
-                        Courage, but also strong nerves. A little bit of luck, but also a good mentor.
-                    </div>
-                </div>
-                <div class="service-item__picture"></div>
-            </div>
+
+            <?php }
+
+            wp_reset_postdata(); // сброс
+
+            ?>
+            <style>
+                .service-item__picture {
+                    flex-shrink: 0;
+                    width: 380px;
+                    height: 260px;
+                    background-size: cover;
+                }
+            </style>
         </div>
     </div>
 </section>
@@ -173,70 +185,41 @@
                         Client Industries:
                     </h3>
                     <div class="fields-list">
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
+                        <?php
+
+                        // параметры по умолчанию
+                        $posts = get_posts(array(
+                            'numberposts' => -1,
+                            'category' => 0,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'include' => array(),
+                            'exclude' => array(),
+                            'meta_key' => '',
+                            'meta_value' => '',
+                            'post_type' => 'our_fields',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                        ));
+
+                        foreach ($posts as $post) {
+                            setup_postdata($post);
+
+                            ?>
+
+                            <div class="fields-list__item">
+                                <div class="fields-list__item-icon">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                                </div>
+                                <span class="fields-list__item-desc">
+                                    <?php the_title(); ?>
+                                </span>
                             </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
-                        <div class="fields-list__item">
-                            <div class="fields-list__item-icon">
-                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/fields-icon.svg" alt="">
-                            </div>
-                            <span class="fields-list__item-desc">
-                                Telecommunication
-                            </span>
-                        </div>
+                        <?php }
+
+                        wp_reset_postdata(); // сброс
+
+                        ?>
+
                     </div>
                 </div>
                 <div class="fields__picture"></div>
@@ -271,42 +254,46 @@
             </div>
 
             <div class="facts__table">
-                <div class="facts__table-item">
+                <?php
+
+                // параметры по умолчанию
+                $posts = get_posts(array(
+                    'numberposts' => -1,
+                    'category' => 0,
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'include' => array(),
+                    'exclude' => array(),
+                    'meta_key' => '',
+                    'meta_value' => '',
+                    'post_type' => 'facts',
+                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                ));
+
+                foreach ($posts as $post) {
+                    setup_postdata($post);
+
+                    ?>
+
+                    <div class="facts__table-item">
                         <span class="facts__table-value">
-                            176
+                            <? the_title(); ?>
                         </span>
-                    <p class="facts__table-desc">
-                        satisified clients
-                        (corporations)
-                    </p>
-                </div>
-                <div class="facts__table-item">
-                        <span class="facts__table-value">
-                            176
-                        </span>
-                    <p class="facts__table-desc">
-                        satisified clients
-                        (corporations)
-                    </p>
-                </div>
-                <div class="facts__table-item">
-                        <span class="facts__table-value">
-                            176
-                        </span>
-                    <p class="facts__table-desc">
-                        satisified clients
-                        (corporations)
-                    </p>
-                </div>
-                <div class="facts__table-item">
-                        <span class="facts__table-value">
-                            176
-                        </span>
-                    <p class="facts__table-desc">
-                        satisified clients
-                        (corporations)
-                    </p>
-                </div>
+                        <p class="facts__table-desc">
+                            <?php
+
+                            echo get_post_meta(get_the_ID(), 'text', true);
+
+                            ?>
+                        </p>
+                    </div>
+
+                <?php }
+
+                wp_reset_postdata(); // сброс
+
+                ?>
+
             </div>
         </div>
     </div>
@@ -481,7 +468,7 @@
                 <div class="contact__form-secure secure">
                     <div class="secure__decorate">
                         <div class="secure__decorate-icon">
-                            <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/shield-icon.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/shield-icon.svg" alt="">
                         </div>
                         <span class="secure__decorate-text">
                                 For your security:
