@@ -609,8 +609,9 @@ strong {
     margin-bottom: 40px;
 }
 .fields__picture {
+    margin-left: 15px;
     flex-shrink: 0;
-    width: 630px;
+    width: 550px;
     height: 500px;
     background: url(https://assets.website-files.com/5abcc0ea5755e1d57ea22970/5bc45d41ca643a7a5b2f4df9_Einsatzgebiete.png) no-repeat center;
     background-size: contain;

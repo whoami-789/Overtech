@@ -222,6 +222,12 @@
 
                     </div>
                 </div>
+                <style>
+                    .fields__picture {
+                        background: url(<?php bloginfo('template_url'); ?>/assets/images/central_asia.png) no-repeat center;
+                        background-size: contain;
+                    }
+                </style>
                 <div class="fields__picture"></div>
             </div>
             <div class="fields-bottom">
@@ -454,15 +460,15 @@
                 By sending this form you confirm, that you accept our Privacy Policy
                 and that you agree to the storing of the information inserted!
             </h3>
-            <form class="contact__form">
+            <form class="contact__form" method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>">
                 <div class="contact__form-body">
                     <div class="contact__form-row">
-                        <input placeholder="Name*" type="text"
+                        <input placeholder="Name*" type="text" name="name"
                                class="contact__form-field contact__form-input name-field">
-                        <input placeholder="E-Mail*" type="email"
+                        <input placeholder="E-Mail*" type="email" name="email"
                                class="contact__form-field contact__form-input email-field">
                     </div>
-                    <textarea placeholder="Message*"
+                    <textarea placeholder="Message*" name="message"
                               class="contact__form-field contact__form-message message-field"></textarea>
                 </div>
                 <div class="contact__form-secure secure">

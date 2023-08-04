@@ -18,6 +18,18 @@ add_theme_support('post-thumbnails');
 add_theme_support('post-thumbnails', array('about'));
 
 add_theme_support( 'menus' );
+
+function process_form_data() {
+    if ( isset( $_POST['action'] ) && $_POST['action'] == 'submit_form' ) {
+        $name = sanitize_text_field( $_POST['name'] );
+        $email = sanitize_email( $_POST['email'] );
+        $message = sanitize_textarea_field( $_POST['message'] );
+
+        // Добавьте здесь код для сохранения данных в базу данных или отправки на почту
+    }
+}
+add_action('admin_post_submit_form', 'process_form_data');
+add_action('admin_post_nopriv_submit_form', 'process_form_data');
 ?>
 
 
