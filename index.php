@@ -21,30 +21,43 @@
                     <img src="<?php bloginfo('template_url'); ?>/assets/images/next-icon.svg" alt="">
                 </a>
                 <div class="intro__bottom-table">
-                    <a href="page-blog.php" class="intro__bottom-item">
+
+                    <?php
+
+                    // параметры по умолчанию
+                    $posts = get_posts(array(
+                        'numberposts' => 3,
+                        'category' => 4,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        'include' => array(),
+                        'exclude' => array(),
+                        'meta_key' => '',
+                        'meta_value' => '',
+                        'post_type' => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ));
+
+                    foreach ($posts as $post) {
+                        setup_postdata($post);
+                        ?>
+
+                        <a href="<?php the_permalink(); ?>" class="intro__bottom-item">
                               <span class="intro__bottom-date">
-                                  03/2020
+                                  <?php echo date('F'); ?> / <?php echo date('Y'); ?>
                               </span>
-                        <p class="intro__bottom-desc">
-                            Negotiation Chimeras
-                        </p>
-                    </a>
-                    <a href="page-blog.php" class="intro__bottom-item">
-                              <span class="intro__bottom-date">
-                                  03/2020
-                              </span>
-                        <p class="intro__bottom-desc">
-                            Negotiation Chimeras
-                        </p>
-                    </a>
-                    <a href="page-blog.php" class="intro__bottom-item">
-                              <span class="intro__bottom-date">
-                                  03/2020
-                              </span>
-                        <p class="intro__bottom-desc">
-                            Negotiation Chimeras
-                        </p>
-                    </a>
+                            <p class="intro__bottom-desc">
+                                <? the_title(); ?>
+                            </p>
+                        </a>
+
+                        <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -395,7 +408,7 @@
                     <input type="text" class="newsletter-form__input" placeholder="Title">
                     <input type="text" class="newsletter-form__input" placeholder="First Name">
                     <input type="text" class="newsletter-form__input" placeholder="Last Name">
-                    <input type="email" class="newsletter-form__input" placeholder="Email Address">
+                    <input type="email" class="newsletter-form__input" placeholder="Email Address" required>
                 </div>
                 <label class="agreement newsletter__label">
                     <input class="agreement__input" type="checkbox">
@@ -460,8 +473,11 @@
                 By sending this form you confirm, that you accept our Privacy Policy
                 and that you agree to the storing of the information inserted!
             </h3>
-            <form class="contact__form" method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>">
+
+
+            <form class="contact__form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
                 <div class="contact__form-body">
+                    <input type="hidden" name="action" value="submit_contact_form">
                     <div class="contact__form-row">
                         <input placeholder="Name*" type="text" name="name"
                                class="contact__form-field contact__form-input name-field">
