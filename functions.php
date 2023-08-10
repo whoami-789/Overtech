@@ -41,7 +41,7 @@ function process_contact_form_data() {
         // Например, отправка email или сохранение данных в базу данных
 
         // Пример отправки email с помощью функции wp_mail (требуется настройка SMTP)
-        $to = 'tudya1238@gmail.com'; // Замените на свой email
+        $to = 'tudya238@gmail.com'; // Замените на свой email
         $subject = 'Contact Form Submission';
         $headers = array('Content-Type: text/html; charset=UTF-8');
         $body = "Name: $name<br>Email: $email<br>Message: $message";
@@ -63,6 +63,16 @@ function process_contact_form_data() {
 }
 add_action('admin_post_submit_contact_form', 'process_contact_form_data');
 add_action('admin_post_nopriv_submit_contact_form', 'process_contact_form_data');
+
+
+function custom_newsletter_form_shortcode($atts) {
+    ob_start();
+    include get_template_directory() . '/custom-newsletter-form.php';
+    return ob_get_clean();
+}
+add_shortcode('custom-form', 'custom_newsletter_form_shortcode');
+
+
 
 ?>
 
